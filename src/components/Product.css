@@ -1,0 +1,119 @@
+/* ===== Luxury–minimal LIGHT theme (fixes overlap, readability) ===== */
+
+/* Page backdrop */
+body{
+  background:#f3f4f6;            /* soft grey */
+  color:#111827;                 /* near-black ink */
+  font-family: ui-sans-serif, system-ui, "Inter", Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ----- 2×2 grid wrapper (used in Catalog.jsx) ----- */
+.grid-2x2{
+  display:grid;
+  grid-template-columns: repeat(2, minmax(260px, 1fr));  /* two cards per row */
+  gap: 24px;
+  max-width: 1040px;
+  margin: 24px auto 48px;
+  padding: 0 16px;
+}
+
+/* ----- Product card ----- */
+.products{
+  background:#ffffff;            /* crisp white card */
+  border:1px solid #e6e8ec;      /* subtle border */
+  border-radius:16px;
+  box-shadow: 0 2px 10px rgba(17,24,39,.06);
+  padding:14px;
+  display:flex;
+  flex-direction:column;
+  gap:10px;
+  width:auto;                    /* grid controls width */
+  overflow:hidden;               /* keeps image corners tidy */
+  transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
+}
+
+.products:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(17,24,39,.08);
+  border-color:#dfe2e7;
+}
+
+/* ----- Image: full width, no bleed, no clipping ----- */
+.img{
+  display:block;
+  width:100%;
+  height:180px;                  /* consistent card height */
+  object-fit:cover;              /* show full area without distortion */
+  border-radius:12px;
+  border:1px solid #eceff3;
+  background:#f7f8fa;
+}
+
+/* ----- Details ----- */
+.product-details{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.product-name{
+  font-weight:600;
+  font-size:16px;
+  color:#111827;                 /* readable */
+}
+
+.Total-Price{
+  font-size:13px;
+  color:#6b7280;                 /* muted */
+}
+
+/* Price badge */
+.product-price{
+  background:#0f172a;            /* deep slate */
+  color:#ffffff;
+  border-radius:999px;
+  padding:6px 10px;
+  font-weight:700;
+  font-size:13px;
+  border:1px solid rgba(15,23,42,.15);
+}
+
+/* ----- Quantity picker: compact, never full width ----- */
+.quantity-picker,
+.qty-picker{
+  align-self:flex-start;
+  display:inline-flex;
+  align-items:center;
+  gap:8px;
+  padding:4px 8px;
+  background:#f3f5f8;
+  border:1px solid #e6e8ec;
+  border-radius:999px;
+}
+
+.quantity-picker button,
+.qty-picker button{
+  width:28px; height:28px; border-radius:50%;
+  border:1px solid #e4e7ec;
+  background:#ffffff;
+  color:#111827; font-weight:700;
+  cursor:pointer;
+  transition: background-color .15s ease, border-color .15s ease, transform .1s ease;
+}
+.quantity-picker button:hover,
+.qty-picker button:hover{
+  background:#f0f2f5; border-color:#d9dde3; transform: translateY(-1px);
+}
+
+.quantity-picker input,
+.qty-picker input{
+  width:42px; text-align:center;
+  border:0; background:transparent;
+  color:#111827; font-weight:700; font-size:15px; outline:none;
+}
+
+/* ----- Responsive: stack on small screens ----- */
+@media (max-width: 700px){
+  .grid-2x2{ grid-template-columns: 1fr; max-width: 560px; }
+}

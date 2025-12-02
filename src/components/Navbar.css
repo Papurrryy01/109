@@ -1,0 +1,104 @@
+/* ===== Luxury Minimal Navbar ===== */
+
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  width: 100%;
+  background: #ffffff;
+  border-bottom: 1px solid #e6e8ec;
+  box-shadow: 0 2px 8px rgba(17, 24, 39, 0.05);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 32px;
+}
+
+/* Left section (brand + title) */
+.navbar-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.navbar-container h1 {
+  font-size: 20px;
+  font-weight: 800;
+  color: #0f172a;
+  letter-spacing: -0.01em;
+}
+
+/* Right section (menu links) */
+.navbar-menu {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.navbar-nav {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-item {
+  display: inline-block;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: #374151;
+  font-weight: 600;
+  font-size: 15px;
+  letter-spacing: -0.01em;
+  transition: color 0.2s ease, transform 0.2s ease;
+  padding: 6px 0;
+  position: relative;
+}
+
+/* Underline hover accent */
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #0f172a;
+  border-radius: 2px;
+  transition: width 0.25s ease;
+}
+
+.nav-link:hover {
+  color: #0f172a;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Active or focus state */
+.nav-link:focus,
+.nav-link:active {
+  color: #0f172a;
+  outline: none;
+}
+
+/* Responsive: stack vertically on mobile */
+@media (max-width: 720px) {
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 12px 20px;
+  }
+
+  .navbar-menu {
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 8px;
+  }
+
+  .nav-link {
+    font-size: 14px;
+  }
+}
