@@ -1,0 +1,225 @@
+.home-page {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 3.5rem;
+  color: #111827;
+  text-align: left;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  align-items: center;
+  margin-bottom: 2.25rem;
+}
+
+.hero-content h1 {
+  font-size: clamp(28px, 3.1vw, 36px);
+  margin: 0.4rem 0 0.8rem;
+  letter-spacing: -0.015em;
+}
+
+.eyebrow {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: #6b7280;
+  margin-bottom: 0.35rem;
+}
+
+.lede {
+  margin: 0 0 1.4rem;
+  color: #4b5563;
+  line-height: 1.65;
+  font-size: 1.05rem;
+}
+
+.hero-actions {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 1.25rem;
+}
+
+.primary-btn {
+  padding: 0.78rem 1.4rem;
+  background: #111827;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  box-shadow: 0 12px 30px rgba(17, 24, 39, 0.2);
+  transition: transform 120ms ease, box-shadow 120ms ease, filter 120ms ease;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 34px rgba(17, 24, 39, 0.24);
+  filter: brightness(1.03);
+}
+
+.ghost-btn {
+  padding: 0.78rem 1.2rem;
+  border-radius: 12px;
+  border: 1px solid #d1d5db;
+  color: #111827;
+  text-decoration: none;
+  font-weight: 700;
+  background: #fff;
+  transition: border-color 120ms ease, transform 120ms ease, box-shadow 120ms ease;
+}
+
+.ghost-btn:hover {
+  border-color: #9ca3af;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+.hero-meta {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.9rem;
+}
+
+.meta-value {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: #0f172a;
+}
+
+.muted {
+  color: #6b7280;
+}
+
+.hero-showcase {
+  display: flex;
+  justify-content: center;
+}
+
+.showcase-card {
+  width: 100%;
+  max-width: 420px;
+  background: linear-gradient(160deg, #f8fafc 0%, #eef2ff 100%);
+  border: 1px solid #e5e7eb;
+  border-radius: 20px;
+  padding: 1.5rem;
+  box-shadow: 0 18px 48px rgba(15, 23, 42, 0.12);
+}
+
+.badge {
+  display: inline-block;
+  padding: 0.35rem 0.75rem;
+  background: #e0e7ff;
+  color: #4338ca;
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 0.65rem;
+}
+
+.showcase-card h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.2rem;
+  color: #111827;
+}
+
+.showcase-card p {
+  color: #4b5563;
+  line-height: 1.6;
+  margin-bottom: 0.8rem;
+}
+
+.showcase-card ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.9rem;
+  display: grid;
+  gap: 0.45rem;
+}
+
+.showcase-card li {
+  position: relative;
+  padding-left: 1.1rem;
+  color: #374151;
+}
+
+.showcase-card li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #4338ca;
+  font-weight: 800;
+}
+
+.text-link {
+  color: #4338ca;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.text-link:hover {
+  text-decoration: underline;
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1rem;
+  margin: 1.5rem 0 2.2rem;
+}
+
+.pillar-card {
+  background: #fff;
+  border: 1px solid #e5e7eb;
+  border-radius: 14px;
+  padding: 1.1rem 1.2rem;
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.08);
+}
+
+.pillar-card h4 {
+  margin: 0 0 0.35rem;
+  font-size: 1.05rem;
+  color: #0f172a;
+}
+
+.pillar-card p {
+  color: #4b5563;
+  line-height: 1.55;
+}
+
+.callout {
+  margin-top: 1rem;
+  padding: 1.4rem 1.5rem;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #f8fafc, #eef2ff);
+  box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.callout h2 {
+  margin: 0.2rem 0 0.4rem;
+  font-size: 1.35rem;
+}
+
+.callout .primary-btn {
+  box-shadow: 0 12px 24px rgba(17, 24, 39, 0.18);
+}
+
+@media (max-width: 720px) {
+  .home-page {
+    padding: 2rem 1.1rem 3rem;
+  }
+
+  .callout {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
