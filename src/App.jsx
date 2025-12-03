@@ -1,5 +1,7 @@
 import { BrowserRouter, Routes, Route} from 'react-router-dom'
 
+import GlobalProvider from './state/globalProvider.jsx'
+
 import Catalog from './pages/Catalog.jsx'
 import Home from './pages/Home.jsx'
 import About from './pages/About.jsx'
@@ -14,22 +16,24 @@ import './App.css'
 
 function App() {
   return (
-    <BrowserRouter>
+    <GlobalProvider>
+      <BrowserRouter>
       <div className="App">
-        <Navbar />
-        <main className="main-content">
-          <Routes>
-            <Route path='/' element= {<Home/>} />
-            <Route path='/about' element={<About/>} />
-            <Route path='/catalog' element={<Catalog/>} />
-            <Route path='/contact' element={<Contact/>} />
-            <Route path='/admin' element={<Admin/>}></Route>
-            <Route path='*' element={<NotFound/>} />
-          </Routes>
-        </main>
-        <Footer />
-      </div>
-    </BrowserRouter>
+          <Navbar />
+          <main className="main-content">
+            <Routes>
+              <Route path='/' element= {<Home/>} />
+              <Route path='/about' element={<About/>} />
+              <Route path='/catalog' element={<Catalog/>} />
+              <Route path='/contact' element={<Contact/>} />
+              <Route path='/admin' element={<Admin/>}></Route>
+              <Route path='*' element={<NotFound/>} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </BrowserRouter>
+    </GlobalProvider>
   );
 }
 

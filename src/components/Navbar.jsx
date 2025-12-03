@@ -1,8 +1,15 @@
+import { useContext } from "react";
+import GlobalContext from "../state/globalContext.js";
 import {Link} from "react-router-dom";
+
+import { IconShoppingCart } from '@tabler/icons-react';
 
 import "./Navbar.css";
 
 function Navbar() {
+  const user = useContext(GlobalContext).user
+  const cart = useContext(GlobalContext).cart
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -40,7 +47,16 @@ function Navbar() {
             <Link to="/admin" className="nav-link">Admin</Link >
           </li>
         </ul>
+        
+        <div>
+          <div>{user.name}</div>
+        </div>
       
+        <div>
+          <Link to="/cart" className="nav-link">
+            <IconShoppingCart/> ({cart.length})
+          </Link>
+        </div>
       </div>
     </nav>
   );
