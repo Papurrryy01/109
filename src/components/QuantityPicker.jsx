@@ -2,16 +2,24 @@ import { useState } from "react";
 
 
 function QuantityPicker(props) {
-    const [quantity, setQuantity] = useState(0);
+    const [quantity, setQuantity] = useState(1);
+
+    const notifyChange = (newQty) => {
+        if (typeof props.onChange === "function") {
+            props.onChange(newQty);
+        }
+    };
 
     function increaseQuantity() {
         let newQuantity = quantity + 1;
         setQuantity(newQuantity);
+        notifyChange(newQuantity);
     }
     function decreaseQuantity() {
-        if (quantity > 0) {
+        if (quantity > 1) {
             let newQuantity = quantity - 1;
             setQuantity(newQuantity);
+            notifyChange(newQuantity);
         }
     }
 

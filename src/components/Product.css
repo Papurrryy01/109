@@ -18,7 +18,8 @@ body{
 }
 
 /* ----- Product card ----- */
-.products{
+.products,
+.product-card{
   background:#ffffff;            /* crisp white card */
   border:1px solid #e6e8ec;      /* subtle border */
   border-radius:16px;
@@ -32,7 +33,14 @@ body{
   transition: transform .16s ease, box-shadow .16s ease, border-color .16s ease;
 }
 
-.products:hover{
+.product-card{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+}
+
+.products:hover,
+.product-card:hover{
   transform: translateY(-2px);
   box-shadow: 0 6px 20px rgba(17,24,39,.08);
   border-color:#dfe2e7;
@@ -111,6 +119,24 @@ body{
   width:42px; text-align:center;
   border:0; background:transparent;
   color:#111827; font-weight:700; font-size:15px; outline:none;
+}
+
+.rounded-btn{
+  align-self:stretch;
+  padding:12px;
+  border-radius:12px;
+  border:1px solid #0f172a;
+  background:#0f172a;
+  color:#ffffff;
+  font-weight:700;
+  cursor:pointer;
+  transition: transform .15s ease, box-shadow .15s ease, filter .15s ease;
+}
+
+.rounded-btn:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(15,23,42,.18);
+  filter: brightness(1.04);
 }
 
 /* ----- Responsive: stack on small screens ----- */

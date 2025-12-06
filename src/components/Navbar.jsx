@@ -10,6 +10,16 @@ function Navbar() {
   const user = useContext(GlobalContext).user
   const cart = useContext(GlobalContext).cart
 
+  function getTotalItems() {
+    let sum = 0;
+
+    for (let i = 0; i < cart.length; i++) {
+      sum += cart[i].quantity ?? 1;
+    }
+
+    return sum;
+  }
+
   return (
     <nav className="navbar">
       <div className="navbar-container">
@@ -54,7 +64,7 @@ function Navbar() {
       
         <div>
           <Link to="/cart" className="nav-link">
-            <IconShoppingCart/> ({cart.length})
+            <IconShoppingCart/> ({getTotalItems()})
           </Link>
         </div>
       </div>
